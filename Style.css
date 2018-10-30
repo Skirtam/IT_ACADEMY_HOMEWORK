@@ -1,0 +1,45 @@
+header {
+    text-align: center;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+.container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+main {
+    margin: 0 250px;
+    padding: 20px;
+    width: 600px;
+    font-size: x-large;
+    line-height: 35px;
+}
+
+b i p {
+    border-left: 2px solid;
+    padding-left: 10px;
+}
+
+.custom-font {
+    font-family: "Swanky and Moo Moo", cursive, handwriting;
+    color: black;
+    font-size: 35px;
+    letter-spacing: 2px;
+    line-height: 40px;
+}
+
+.top-font {
+    font-family: 'Fahkwang', sans-serif;
+    color: black;
+    font-weight: bold;
+}
+
+.main-font {
+    font-family: 'Roboto', sans-serif;
+    color: dimgray;
+}
+
