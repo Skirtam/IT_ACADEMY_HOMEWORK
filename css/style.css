@@ -1,0 +1,101 @@
+body {
+    font-family: 'Mukta', sans-serif;
+}
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+/*-----------------------------------------*/
+h1 {
+    font-family: 'Lato', sans-serif;
+}
+blockquote {
+    font-family: 'Charmonman', cursive;
+}
+img {
+    width: 800px;
+}
+/*-----------------------------------------*/
+.block_table {
+    background-color: #cbcbcb;
+    width: 100%;
+    height: 755px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    counter-reset: column;
+
+}
+.table {
+    width: 210px;
+    height: 755px;
+    background: dimgray;
+    overflow-y: scroll;
+    margin: 5px;
+    display: inline-block;
+    counter-increment: column;
+    counter-reset: cell;
+}
+div [class*=slot]{
+    text-align: center;
+    overflow-x: scroll;
+}
+div [class*=slot]::before {
+    counter-increment: cell;
+    content: "Стовбчик " counter(column) " - " "Клітинка " counter(cell);
+}
+.slot1 {
+    width: 180px;
+    height: 100px;
+    background: #ff4776;
+    margin: 7px;
+}
+.slot2 {
+    width: 180px;
+    height: 200px;
+    background: #ff4776;
+    margin: 7px;
+}
+.slot3 {
+    width: 180px;
+    height: 300px;
+    background: #ff4776;
+    margin: 7px;
+}
+.slot4 {
+    width: 180px;
+    height: 400px;
+    background: #ff4776;
+    margin: 7px;
+}
+/*-----------------------------------------*/
+.block_lorem {
+    background-color: #cbcbcb;
+    height: 755px;
+    margin-top: 20px;
+}
+.lorem {
+    padding-top: 35px;
+    width: 500px;
+    margin: 0 auto;
+}
+.lorem p {
+    background: red;
+    position: relative;
+}
+.lorem p:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+}
+.lorem p:nth-child(odd):hover:before {
+    left: -50%;
+}
+.lorem p:nth-child(even):hover:before {
+    right: -50%;
+}
