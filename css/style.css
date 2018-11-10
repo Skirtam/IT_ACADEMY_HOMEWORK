@@ -1,101 +1,127 @@
-body {
-    font-family: 'Mukta', sans-serif;
-}
-.container {
-    width: 800px;
-    margin: 0 auto;
-}
-/*-----------------------------------------*/
-h1 {
-    font-family: 'Lato', sans-serif;
-}
-blockquote {
-    font-family: 'Charmonman', cursive;
-}
-img {
-    width: 800px;
-}
-/*-----------------------------------------*/
-.block_table {
-    background-color: #cbcbcb;
-    width: 100%;
-    height: 755px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    counter-reset: column;
-
-}
-.table {
-    width: 210px;
-    height: 755px;
-    background: dimgray;
-    overflow-y: scroll;
-    margin: 5px;
-    display: inline-block;
-    counter-increment: column;
-    counter-reset: cell;
-}
-div [class*=slot]{
-    text-align: center;
-    overflow-x: scroll;
-}
-div [class*=slot]::before {
-    counter-increment: cell;
-    content: "Стовбчик " counter(column) " - " "Клітинка " counter(cell);
-}
-.slot1 {
-    width: 180px;
-    height: 100px;
-    background: #ff4776;
-    margin: 7px;
-}
-.slot2 {
-    width: 180px;
-    height: 200px;
-    background: #ff4776;
-    margin: 7px;
-}
-.slot3 {
-    width: 180px;
-    height: 300px;
-    background: #ff4776;
-    margin: 7px;
-}
-.slot4 {
-    width: 180px;
-    height: 400px;
-    background: #ff4776;
-    margin: 7px;
-}
-/*-----------------------------------------*/
-.block_lorem {
-    background-color: #cbcbcb;
-    height: 755px;
-    margin-top: 20px;
-}
-.lorem {
-    padding-top: 35px;
-    width: 500px;
-    margin: 0 auto;
-}
-.lorem p {
-    background: red;
-    position: relative;
-}
-.lorem p:before {
-    content: '';
+/*.box_animate {
+    display: block;
+    width: calc(100% - 25px);
+    height: calc(100% - 25px);
     position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    opacity: 0.5;
+    margin: 10px;
+    border: 1px solid;
+    overflow: hidden;
+}*/
+/*.box {
+    position: absolute;
+    width: 20vh;
+    height: 20vh;
+    margin: 0 auto;
+    top: 40%;
+    right: 40%;
 }
-.lorem p:nth-child(odd):hover:before {
-    left: -50%;
+.animation {
+    position: relative;
+    animation-name: move;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    z-index: 1;
 }
-.lorem p:nth-child(even):hover:before {
-    right: -50%;
+@keyframes move {
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(180deg);
+    }
+}*/
+.box_animate {
+    position: absolute;
+    width: 90vh;
+    height: 90vh;
+    margin: 0 auto;
+    border: 1px solid;
 }
+.box {
+    position: absolute;
+    width: 20vh;
+    height: 20vh;
+    margin: 0 auto;
+    top: 40%;
+    right: 40%;
+}
+.animation {
+    animation-name: rotate;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 2;
+}
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+.front {
+    position: inherit;
+    width: 10vh;
+    height: 10vh;
+    margin: 0 auto;
+    background: blue;
+    top: 30%;
+    left: 25%;
+}
+.front:before {
+    content: 'Front';
+    background: blue;
+    transform: translateZ(50px);
+}
+.moveFront {
+    animation-name: moveFront;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 1;
+}
+@keyframes moveFront {
+    from {
+        transform: rotateZ(0deg);
+        z-index: 1;
+    }
+    to {
+        transform: rotateZ(360deg);
+        z-index: 3;
+    }
+}
+.back {
+    position: inherit;
+    width: 10vh;
+    height: 10vh;
+    margin: 0 auto;
+    background: red;
+    top: 30%;
+    left: 25%;;
+}
+.back:before {
+    content: 'Back';
+    background: red;
+    transform: translateZ(-50px);
+}
+.moveBack {
+    animation-name: moveBack;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 3;
+}
+@keyframes moveBack {
+    from {
+        transform: rotateZ(0deg);
+        z-index: 3;
+    }
+    to {
+        transform: rotateZ(-360deg);
+        z-index: 1;
+    }
+}
+
